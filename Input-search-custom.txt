@@ -1,0 +1,1 @@
+$searchbar-md-input-background-color:color($colors, lightdark);

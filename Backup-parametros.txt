@@ -1,0 +1,83 @@
+import { Component } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+import xml2js from "xml2js";
+
+
+@Component({
+  selector: 'contato-form',
+  templateUrl: 'contato-form.html'
+})
+export class ContatoFormComponent {
+
+  contatoForm: FormGroup;
+
+  constructor(public formbuilder: FormBuilder, public http: Http) {
+    this.contatoForm = this.formbuilder.group({
+      
+      cep: [null, [Validators.required]],
+      rua: [null, [Validators.required]]
+     
+    })
+  }
+
+  buscaCep() {
+    const isValid = this.contatoForm.controls['cep'].valid;
+    const empresa:string = '';
+    const senha:string = '';
+    const servico:string = '04510';
+    const cepOrigem:string = '65054530';
+    const cepDestino = this.contatoForm.controls['cep'].valid;
+    const peso:number = 1;
+    const formato:any = 1;
+    const comprimento:any = 20;
+    const altura:any = 6;
+    const largura:any = 20;
+    const maoProria:string = 'n';
+    const valorDeclarado:any = 300;
+    const avisoRecebimento:string = 'n';
+    const diametro:any = 0;
+    const retorno:any = 'xml';
+    const indicadorCalculo:any = 3;
+    if(isValid) {
+      this.http.get(`http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?
+      nCdEmpresa=${empresa}
+      &sDsSenha=${senha}
+      &sCepOrigem=${cepOrigem}
+      &sCepDestino=${cepDestino}
+      &nVlPeso=${peso}
+      &nCdFormato=${formato}
+      &nVlComprimento=2
+      0
+      &nVlAltura=${altura}
+      &nVlLargura=${largura}
+      &sCdMaoPropria=${maoProria}
+      &nVlValorDeclarado=${valorDeclarado}
+      &sCdAvisoRecebimento=${avisoRecebimento}
+      &nCdServico=${servico}
+      &nVlDiametro=${diametro}
+      &StrRetorno=${retorno}&
+      nIndicaCalculo=${indicadorCalculo}`)
+      .map(res => {
+        let data;
+        xml2js.parseString( res.text(), function (err, result) {
+         console.dir(err,result); //Prints JSON object!
+         data = result
+       });
+       return data;
+      })
+       .subscribe(data => { 
+        this.insereValoresEndereco(data);  
+        console.log(data);       
+       });
+      }
+  }
+
+  insereValoresEndereco(dados) {
+    this.contatoForm.controls['rua'].setValue(dados.cServico.MsgErro);
+   
+  }
+
+
+}

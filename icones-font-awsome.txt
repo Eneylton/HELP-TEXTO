@@ -1,0 +1,28 @@
+<ion-content padding>
+
+  <button ion-button icon-only small color="danger">
+    <ion-icon class="fa-battery-1"></ion-icon> 
+  </button>
+  
+  <button ion-button icon-only color="primary">
+    <ion-icon class="fa-battery-5"></ion-icon> 
+  </button>
+
+  <button ion-button icon-only large color="secondary">
+    <ion-icon class="fa-battery-full"></ion-icon> 
+  </button>
+
+  <button ion-button icon-only large color="secondary">
+    <ion-icon class="fa-battery-full"></ion-icon> 
+  </button>
+
+  <button ion-button icon-only large color="secondary">
+    <ion-icon class="fa-shopping-basket"></ion-icon> 
+  </button>
+
+  <button ion-button icon-only large color="secondary">
+    <ion-icon class="fa-opencart"></ion-icon> 
+  </button>
+
+
+</ion-content>

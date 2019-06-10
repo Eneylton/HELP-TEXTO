@@ -1,0 +1,29 @@
+import { Component } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
+import { CurrencyPipe } from '@angular/common';
+
+
+@Component({
+  selector: 'page-list',
+  templateUrl: 'list.html'
+})
+export class ListPage {
+
+  valor:any;
+ 
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private currencyPipe: CurrencyPipe) {
+    
+    
+    let amount = 1337.1337;
+    console.log(this.getCurrency(amount));
+
+    this.valor = this.getCurrency(amount);
+    
+
+  }
+
+  getCurrency(amount: number) {
+    return this.currencyPipe.transform(amount, 'BRL', true, '1.2-2');
+  }
+}

@@ -1,0 +1,5 @@
+<ion-slides autoplay="3000" loop="true">
+      <ion-slide *ngFor="let image of  produtos.images">
+        <img [src]="image.src" />
+      </ion-slide>
+    </ion-slides>

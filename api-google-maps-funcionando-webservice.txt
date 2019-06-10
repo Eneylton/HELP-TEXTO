@@ -1,0 +1,41 @@
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+
+@Component({
+  selector: 'page-home',
+  templateUrl: 'home.html'
+})
+export class HomePage {
+
+  endereco: any[];
+
+  constructor(public navCtrl: NavController, public http: Http) {
+
+  }
+
+
+  buscaCep() {
+
+    const logradouro:string ='Rua tres '; 
+    const bairro:string ='cohatrac IV '; 
+    const cidade:string ='São luís '; 
+    const uf:string ='Maranhão '; 
+
+
+    this.http.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${logradouro} ${bairro} ${cidade} ${uf}&key=AIzaSyA9eHf1miI9jDsWXtYL9oKDeMwEHsQAJGg`)
+      .map(res => res.json())
+      .subscribe(data => {
+        
+        console.log("Endereço: " + data.results[0].formatted_address);
+        console.log("Latitude: " + data.results[0].geometry.location.lat);
+        console.log("Longitude: " + data.results[0].geometry.location.lng);
+        console.log("Cidade: " + data.results[0].address_components[2].long_name);
+        console.log("Estado: " + data.results[0].address_components[3].long_name);
+      
+      })
+  }
+
+
+}

@@ -1,0 +1,36 @@
+cep: [65054530, [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
+      nCdEmpresa: [null, [Validators.required, Validators.minLength(5)]],
+      sDsSenha: [null, [Validators.minLength(3)]],
+      sCepOrigem: [4380150, [Validators.required]],
+      sCepDestino: [null, [Validators.required]],
+      nVlPeso: [null, [Validators.required]],
+      nCdFormato: [null, [Validators.required]],
+      nVlComprimento: [null, [Validators.required]],
+      nVlAltura: [null, [Validators.required]],
+      nVlLargura: [null, [Validators.required]],
+      nVlDiametro: [null, [Validators.required]],
+      sCdMaoPropria: [null, [Validators.required]],
+      nVlValorDeclarado: [null, [Validators.required]],
+      sCdAvisoRecebimento: [null, [Validators.required]],
+      StrRetorno: [null, [Validators.required]],
+      nCdServico: [null, [Validators.required]]
+	  
+	  
+	  
+	   var args = {
+      nCdServico: '40010,41106,40215',
+      nCdEmpresa: '',
+      sDsSenha: '',
+      sCepOrigem: '',
+      sCepDestino: '',
+      nVlPeso: '',
+      nCdFormato: '',
+      nVlComprimento: '',
+      nVlAltura: '',
+      nVlLargura: '',
+      nVlDiametro: '',
+      sCdMaoPropria: '',
+      nVlValorDeclarado: '',
+      sCdAvisoRecebimento: ''
+      // demais parâmetros ...
+    }

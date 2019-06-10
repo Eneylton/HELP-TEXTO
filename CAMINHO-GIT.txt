@@ -1,0 +1,2 @@
+git remote add origin https://github.com/Eneylton/HELP-TEXTO.git
+git push -u origin master

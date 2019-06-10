@@ -1,0 +1,44 @@
+1. Instalando o Font Awesome
+Instale o pacote no seu projeto:
+
+npm install font-awesome --save
+
+2. Personalizar o app-scripts
+
+copiar a pasta config no projeto
+
+3. Indicando scripts no package.json
+Precisamos informar no package.json que estamos usando arquivos personalizados para o app-scripts:
+
+"config": {    
+   "ionic_copy": "./config/copy.config.js",    
+   "ionic_sass": "./config/sass.config.js"  
+},  
+"dependencies": {
+
+
+4. Importando o Font Awesome no SASS
+Agora no “src/app/app.scss” importamos o Font Awesome e fazemos alguns ajustes:
+
+$fa-font-path: "../assets/fonts" !default; 
+@import "font-awesome"; 
+i[class^="fa-"], ion-icon[class^="fa-"] {    
+   font-family: "FontAwesome" !important;
+}
+
+
+
+5. Use os ícones!
+
+
+Pronto! Agora é só usar a vontade:
+
+<button ion-button icon-only small color="danger">    
+   <ion-icon class="fa-battery-1"></ion-icon>   
+</button>    
+<button ion-button icon-only color="primary">    
+   <ion-icon class="fa-battery-2"></ion-icon>   
+</button>   
+<button ion-button icon-only large color="secondary">    
+   <ion-icon class="fa-battery-full"></ion-icon>   
+</button>

@@ -1,0 +1,13 @@
+npm install --save @ionic/storage
+npm install --save woocommerce-api
+npm install --save @ionic-native/paypal@4
+ionic cordova plugin add com.paypal.cordova.mobilesdk
+npm install font-awesome --save
+
+ionic cordova platform add android --save
+
+
+import { PayPal } from '@ionic-native/paypal';
+
+
+

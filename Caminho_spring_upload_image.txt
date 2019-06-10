@@ -1,0 +1,3 @@
+server.port=${port:8082}
+contato.disco.raiz=C:/PROJETOS-JAVA-2019/videoaula-spring-api-rest-upload-master/contato-api/src/main/webapp
+contato.disco.diretorio-fotos=fotos

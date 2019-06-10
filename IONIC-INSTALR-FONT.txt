@@ -1,0 +1,38 @@
+
+Atualização de ICONES e splessh:
+ionic cordova resources
+_________________________________
+
+
+- Baixe a fonte no google fonte
+crie a pasta fonte na pasta assent
+
+no arquivo variable.scss adicionar o codigo
+
+@font-face{
+
+font-family: 'Open Sans';
+font-style:normal;
+font-wight:400;
+src:url('caminho da pasta');
+}
+
+$font-family-base:"Open Sans";
+body{
+font-family:"Open Sans" !important;
+font-wight:400 !important;
+
+}
+
+h1,h2,h3,h4,p,button{
+
+font-family:"Open Sans" !important;
+font-wight:400 !important;
+
+}
+
+
+COMENTAR 
+
+import roboto
+noto-sans

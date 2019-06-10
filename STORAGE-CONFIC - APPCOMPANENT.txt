@@ -1,0 +1,109 @@
+ initializeApp() {
+    this.platform.ready().then(() => {
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
+    });
+
+    this.storage.get('session_storage').then((res)=>{
+      if(res == null){
+
+      this.rootPage = 'LoginPage';
+    }else{
+
+      this.rootPage ='HomePage';
+    }
+  
+  });
+
+}
+
+
+TOAST
+import { ToastController } from 'ionic-angular';
+
+public toastCtrl: ToastController
+
+
+const toast = this.toastCtrl.create({
+          message: 'Por Favor Digite um Nome',
+          duration: 3000
+        });
+        toast.present();
+
+
+colar no cadastro
+
+ if(this.nome ==""){
+ if (this.nome == "") {
+
+
+      const toast = this.toastCtrl.create({
+        message: 'Por Favor Digite um Nome',
+        duration: 3000
+      });
+      toast.present();
+
+    } else if (this.telefone == "") {
+
+      const toast = this.toastCtrl.create({
+        message: 'Por Favor Digite um Telefone',
+        duration: 3000
+      });
+      toast.present();
+
+    } else if (this.email == "") {
+      const toast = this.toastCtrl.create({
+        message: 'Por Favor Digite um Email',
+        duration: 3000
+      });
+      toast.present();
+
+    } else if (this.senha == "") {
+
+      const toast = this.toastCtrl.create({
+        message: 'Por Favor Digite um Senha',
+        duration: 3000
+      });
+      toast.present();
+
+    } else if (this.senha != this.confirmar) {
+
+      const toast = this.toastCtrl.create({
+        message: 'A Senha que Você digitou é Diferente !',
+        duration: 3000
+      });
+      toast.present();
+
+    } else {
+
+
+      let body = {
+        nome: this.nome,
+        telefone: this.telefone,
+        email: this.email,
+        senha: this.senha,
+        formulario: 'add_user'
+      };
+
+      this.servidor.postData(body, 'login.php').subscribe(data => {
+
+        this.alertCtrl.create({
+          title: "Parabéns",
+          message: "Cadastro Realizado com Sucesso !!! ",
+          buttons: [{
+            text: "OK",
+            handler: () => {
+              this.navCtrl.push('HomePage');
+            }
+          }]
+        }).present();
+
+        console.log(data);
+      });
+
+    }
+
+
+  }
+	
+	

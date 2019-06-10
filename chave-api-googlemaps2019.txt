@@ -1,0 +1,73 @@
+ANDROID - AIzaSyA9eHf1miI9jDsWXtYL9oKDeMwEHsQAJGg
+
+IOS - AIzaSyDlgt0gu_ekxUnrAAt0OFwkl7_18J2M5Q0
+
+ionic cordova plugin add cordova-plugin-googlemaps 
+  --variable API_KEY_FOR_ANDROID="AIzaSyA9eHf1miI9jDsWXtYL9oKDeMwEHsQAJGg" 
+  --variable API_KEY_FOR_IOS="AIzaSyDlgt0gu_ekxUnrAAt0OFwkl7_18J2M5Q0"
+
+npm install --save @ionic-native/core@latest @ionic-native/google-maps@latest
+
+
+
+INSTALLAR MAPA
+
+import {
+  GoogleMaps,
+  GoogleMap,
+  GoogleMapsEvent,
+  GoogleMapOptions,
+  CameraPosition,
+  MarkerOptions,
+  Marker,
+  Environment
+} from '@ionic-native/google-maps';
+
+
+@Component({
+  selector: 'page-home',
+  templateUrl: 'home.html'
+})
+export class HomePage {
+  map: GoogleMap;
+  constructor() { }
+
+  ionViewDidLoad() {
+    this.loadMap();
+  }
+
+  loadMap() {
+
+    // This code is necessary for browser
+    Environment.setEnv({
+      'API_KEY_FOR_BROWSER_RELEASE': '(your api key for `https://`)',
+      'API_KEY_FOR_BROWSER_DEBUG': '(your api key for `http://`)'
+    });
+
+    let mapOptions: GoogleMapOptions = {
+      camera: {
+         target: {
+           lat: 43.0741904,
+           lng: -89.3809802
+         },
+         zoom: 18,
+         tilt: 30
+       }
+    };
+
+    this.map = GoogleMaps.create('map_canvas', mapOptions);
+
+    let marker: Marker = this.map.addMarkerSync({
+      title: 'Ionic',
+      icon: 'blue',
+      animation: 'DROP',
+      position: {
+        lat: 43.0741904,
+        lng: -89.3809802
+      }
+    });
+    marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
+      alert('clicked');
+    });
+  }
+}

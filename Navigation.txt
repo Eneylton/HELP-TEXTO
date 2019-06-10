@@ -1,0 +1,10 @@
+  openCategoryPage(category) {
+
+    this.navCtrl.push('ProductsByCategory', { "category": category });
+  }
+
+  openCart(){
+
+    this.modalCtrl.create(CartPage).present();
+
+  }

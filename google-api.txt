@@ -1,0 +1,8 @@
+https://maps.googleapis.com/maps/api/geocode/json?address=R. Três+36+Cohatrac III+São Luís+65052-050+MA+Brasil&key=AIzaSyA9eHf1miI9jDsWXtYL9oKDeMwEHsQAJGg
+
+R. Três, 36 - Cohatrac III, São Luís - MA, 65052-050, Brasil
+
+https://maps.googleapis.com/maps/api/geocode/json?address=cohatracIVruatres&key=AIzaSyA9eHf1miI9jDsWXtYL9oKDeMwEHsQAJGg
+
+
+https://maps.googleapis.com/maps/api/geocode/json?address=CidadeOperária Rua do Arame - Santa Clara&key=AIzaSyA9eHf1miI9jDsWXtYL9oKDeMwEHsQAJGg

@@ -1,0 +1,12 @@
+address:
+address_1: "r.3, 36, cohatraciv"
+address_2: "CS 36"
+city: "São Luís"
+country: "Brasil"
+phone: "98987073106"
+postcode: "65054530"
+state: "Ma"
+
+
+
+sdkmanager.bat "platform-tools" "platforms;android-28" "build-tools;28.0.3" "extras;android;m2repository"

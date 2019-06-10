@@ -1,0 +1,22 @@
+ buscaFrete() {
+    const cepValue = this.contatoForm.controls['cep'].value;
+    const isValid = this.contatoForm.controls['cep'].valid;
+    if(isValid) {
+      this.http.get(`http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?nCdEmpresa=08082650&sDsSenha=564321&sCe
+      pOrigem=70002900&sCepDestino=${cepValue}&nVlPeso=1&nCdFormato=1&nVlComprimento=20&nVlAltura=2
+      0&nVlLargura=20&sCdMaoPropria=n&nVlValorDeclarado=0&sCdAvisoRecebimento=n&nCdServico=04510&
+      nVlDiametro=0&StrRetorno=xml&nIndicaCalculo=3`)
+      .map(res => {
+        let data;
+        xml2js.parseString( res.text(), function (err, result) {
+         console.dir(result); //Prints JSON object!
+         data = result
+       });
+       return data;
+      })
+       .subscribe(data => { 
+        this.insereValoresEndereco(data);  
+        console.log(data);       
+       });
+      }
+  }

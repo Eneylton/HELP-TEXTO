@@ -1,0 +1,24 @@
+﻿ionic cordova platform add browser --save
+ionic cordova run browser
+ionic cordova run android --livereload
+
+
+♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫
+
+server.port=${port:8082}
+contato.disco.raiz=C:/APLICATIVOS-2019/app-upload/src/assets
+contato.disco.diretorio-fotos=imgs
+
+____________________________________________________________________
+
+server.port=${port:8082}
+contato.disco.raiz=C:/APLICATIVOS-2019/app-galeria/src/assets
+contato.disco.diretorio-fotos=imgs
+
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+spring.jpa.hibernate.ddl-auto=create
+spring.datasource.url=jdbc:mysql://localhost:3306/db_galeria?useTimezone=true&serverTimezone=UTC
+spring.datasource.username=root
+spring.datasource.password=ti1234

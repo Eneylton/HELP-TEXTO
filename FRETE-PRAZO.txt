@@ -1,0 +1,11 @@
+http://correios-server.herokuapp.com/frete/prazo?
+nCdServico=40010,40045
+&sCepOrigem=65054530
+&sCepDestino=65054540
+&nVlPeso=1
+&nCdFormato=1
+&nVlComprimento=20
+&nVlAltura=4
+&nVlLargura=11
+&nVlDiametro=20
+&nVlValorDeclarado=500

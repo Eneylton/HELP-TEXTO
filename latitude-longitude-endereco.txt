@@ -1,0 +1,30 @@
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+
+@Component({
+  selector: 'page-home',
+  templateUrl: 'home.html'
+})
+export class HomePage {
+
+  constructor(public navCtrl: NavController,public http: Http) {
+
+  }
+
+
+  buscaCep() {
+    const cepValue:number = 65054530;
+  
+      this.http.get(`https://maps.googleapis.com/maps/api/geocode/json?address=CidadeOperária Rua do Arame - Santa Clara&key=AIzaSyA9eHf1miI9jDsWXtYL9oKDeMwEHsQAJGg`)
+      .map(res => res.json())
+      .subscribe(data => {
+
+        console.log("Logradouro: " + data);
+      
+      })
+    }
+  
+
+}
